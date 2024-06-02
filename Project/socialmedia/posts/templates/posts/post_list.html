@@ -1,0 +1,11 @@
+{% block content %}
+  <h2>Posts</h2>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <strong>{{ post.user.username }}</strong>: {{ post.content }} <br>
+        <a href="{% url 'add_comment' post.id %}">Add Comment</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
