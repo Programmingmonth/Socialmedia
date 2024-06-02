@@ -7,5 +7,6 @@ This project is a social media and your public can still use it.
 
 # TODO
 - [x] Security.
+- [x] Database.
 - [ ] Not complated.
       
