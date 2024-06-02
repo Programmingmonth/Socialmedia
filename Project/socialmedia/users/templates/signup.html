@@ -1,8 +1,42 @@
 {% block content %}
-  <h2>Sign Up</h2>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+  <style>
+    .form-container {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+      width: 50%;
+      margin: auto;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+
+    .bio-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+
+    .bio-frame {
+      border: 2px solid #ffc800;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+
+  <div class="bio-container">
+    <h2>Bio</h2>
+    <div class="bio-frame">
+      <p>Biographic details are placed here...</p>
+    </div>
+  </div>
 {% endblock %}
