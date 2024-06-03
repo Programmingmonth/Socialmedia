@@ -11,11 +11,42 @@
       crossorigin="anonymous"
     />
     <style>
+      body {
+        background-color: #f4f4f4;
+      }
+
       #linknav1 {
-        margin-left: 699px;
-        color: #ff00d0;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500, 0 -1px #00ff33;
+        color: bisque;
         font-size: x-large;
+      }
+
+      #linknav2 {
+        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500, 0 -1px #00ff33;
+        color: bisque;
+        font-size: x-large;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-center {
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .frame {
+        background-color: #ffffff;
+        padding: 100px;
+        border-radius: 20px;
+        width: 99%;
+        margin: 30px auto 0;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
@@ -23,9 +54,15 @@
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <span class="navbar-text">
+          <a id="linknav2" class="nav-link" href="http://127.0.0.1:8089/signup/">Sign up</a>
+        </span>
+        <span class="navbar-text navbar-center">
           <a id="linknav1" class="nav-link" href="#">Post</a>
         </span>
       </div>
     </nav>
+    <div class="frame">
+      <p><b>Hello, I'm (Programming month)</b></p>
+    </div>
   </body>
 </html>
