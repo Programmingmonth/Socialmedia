@@ -16,13 +16,15 @@
       }
 
       #linknav1 {
-        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500, 0 -1px #00ff33;
+        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500,
+          0 -1px #00ff33;
         color: bisque;
         font-size: x-large;
       }
 
       #linknav2 {
-        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500, 0 -1px #00ff33;
+        text-shadow: -1px 0 #ff1212, 0 1px #0051ff, 1px 0 #ffd500,
+          0 -1px #00ff33;
         color: bisque;
         font-size: x-large;
       }
@@ -81,26 +83,76 @@
         display: flex;
         justify-content: flex-end;
       }
+
+      #Chating {
+        text-align: center;
+        background-color: bisque;
+      }
+
+      .chat-container2 {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+      }
+
+      .chat-bubble2 {
+        background-color: #5f1e5f;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 20px;
+        max-width: 60%;
+        position: relative;
+      }
+
+      .chat-bubble2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #5f1e5f transparent transparent transparent;
+      }
+
+      .chat-time2 {
+        font-size: 0.8em;
+        color: #a8c3f1;
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-end;
+      }
     </style>
   </head>
   <body>
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <span class="navbar-text">
-          <a id="linknav2" class="nav-link" href="http://127.0.0.1:8089/signup/">Sign up</a>
+          <a id="linknav2" class="nav-link" href="http://127.0.0.1:8089/signup/"
+            >Sign up</a
+          >
         </span>
         <span class="navbar-text navbar-center">
           <a id="linknav1" class="nav-link" href="#">Post</a>
         </span>
       </div>
     </nav>
+    <br />
     <div class="frame">
       <p><b>Hello, I'm (Programming month)</b></p>
     </div>
+    <br />
+    <h4 id="Chating">Chat</h4>
     <div class="chat-container">
       <div class="chat-bubble">
-        Hello
+        Hello everybody
         <div class="chat-time">9:00 AM</div>
+      </div>
+    </div>
+    <br />
+    <div class="chat-container2">
+      <div class="chat-bubble2">
+        Hello (:
+        <div class="chat-time2">11:00 AM</div>
       </div>
     </div>
   </body>
