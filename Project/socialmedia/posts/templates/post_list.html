@@ -12,7 +12,7 @@
     />
     <style>
       body {
-        background-color: #f4f4f4;
+        background-color: #e3e3e3;
       }
 
       #linknav1 {
@@ -48,6 +48,39 @@
         margin: 30px auto 0;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
       }
+
+      .chat-container {
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+      }
+
+      .chat-bubble {
+        background-color: #1e3a5f;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 20px;
+        max-width: 60%;
+        position: relative;
+      }
+
+      .chat-bubble::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #1e3a5f transparent;
+      }
+
+      .chat-time {
+        font-size: 0.8em;
+        color: #a8c3f1;
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-end;
+      }
     </style>
   </head>
   <body>
@@ -63,6 +96,12 @@
     </nav>
     <div class="frame">
       <p><b>Hello, I'm (Programming month)</b></p>
+    </div>
+    <div class="chat-container">
+      <div class="chat-bubble">
+        Hello
+        <div class="chat-time">9:00 AM</div>
+      </div>
     </div>
   </body>
 </html>
