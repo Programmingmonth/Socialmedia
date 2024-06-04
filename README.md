@@ -21,5 +21,8 @@ virtualenv .venv
 
 # Installtion Linux:
 ```
+pip install virtuelenv
+```
+```
 source .venv/bin/activate
 ```
