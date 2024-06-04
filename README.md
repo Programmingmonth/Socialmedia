@@ -1,10 +1,25 @@
 # Social media
 This project is a social media and your public can still use it.
 
-# This running project
+# How to installing for projects?
 ```
 git clone https://github.com/Programmingmonth/socialmedia.git
 ```
+
+# How to installing app on projects:
 ```
-cd
+pip install virtualenv
+```
+```
+virtualenv .venv
+```
+
+# Open files Windows:
+```
+.venv\Scripts\activate
+```
+
+# Installtion Linux:
+```
+source .venv/bin/activate
 ```
