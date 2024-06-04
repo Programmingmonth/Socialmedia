@@ -5,3 +5,6 @@ This project is a social media and your public can still use it.
 ```
 git clone https://github.com/Programmingmonth/socialmedia.git
 ```
+```
+cd
+```
