@@ -64,6 +64,7 @@
         border-radius: 20px;
         max-width: 60%;
         position: relative;
+        margin-bottom: 10px;
       }
 
       .chat-bubble::after {
@@ -102,6 +103,7 @@
         border-radius: 20px;
         max-width: 60%;
         position: relative;
+        margin-bottom: 10px;
       }
 
       .chat-bubble2::after {
@@ -120,6 +122,40 @@
         margin-top: 5px;
         display: flex;
         justify-content: flex-end;
+      }
+
+      .chat-input-container {
+        display: flex;
+        align-items: center;
+        margin: 30px auto;
+        padding: 10px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        max-width: 800px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-input {
+        flex-grow: 1;
+        border: none;
+        padding: 10px;
+        border-radius: 25px;
+        outline: none;
+      }
+
+      .send-button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .send-button:hover {
+        background-color: #218838;
       }
     </style>
   </head>
@@ -160,5 +196,44 @@
         <div class="chat-time2">11:00 AM</div>
       </div>
     </div>
+
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" placeholder="Typing...">
+      <button class="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+      function sendMessage() {
+        var chatInput = document.querySelector('.chat-input');
+        var message = chatInput.value.trim();
+        if (message !== "") {
+          var chatContainer = document.createElement('div');
+          chatContainer.classList.add('chat-container2');
+          
+          var chatBubble = document.createElement('div');
+          chatBubble.classList.add('chat-bubble2');
+          chatBubble.textContent = message;
+
+          var chatTime = document.createElement('div');
+          chatTime.classList.add('chat-time2');
+          var currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12;
+          minutes = minutes < 10 ? '0'+minutes : minutes;
+          var timeString = hours + ':' + minutes + ' ' + ampm;
+          chatTime.textContent = timeString;
+
+          chatBubble.appendChild(chatTime);
+          chatContainer.appendChild(chatBubble);
+
+          document.body.appendChild(chatContainer);
+
+          chatInput.value = "";
+        }
+      }
+    </script>
   </body>
 </html>
