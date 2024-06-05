@@ -177,12 +177,7 @@
       <p><b>Hello, I'm (Programming month)</b></p>
     </div>
     <br />
-    <h4 id="Chating">
-      Chat
-      <p>
-        ------------------------------------------------------------------------
-      </p>
-    </h4>
+    <h4 id="Chating">Chat</h4>
     <div class="chat-container">
       <div class="chat-bubble">
         Hello everybody
@@ -198,32 +193,32 @@
     </div>
 
     <div class="chat-input-container">
-      <input type="text" class="chat-input" placeholder="Typing...">
+      <input type="text" class="chat-input" placeholder="Typing..." />
       <button class="send-button" onclick="sendMessage()">Send</button>
     </div>
 
     <script>
       function sendMessage() {
-        var chatInput = document.querySelector('.chat-input');
+        var chatInput = document.querySelector(".chat-input");
         var message = chatInput.value.trim();
         if (message !== "") {
-          var chatContainer = document.createElement('div');
-          chatContainer.classList.add('chat-container2');
-          
-          var chatBubble = document.createElement('div');
-          chatBubble.classList.add('chat-bubble2');
+          var chatContainer = document.createElement("div");
+          chatContainer.classList.add("chat-container2");
+
+          var chatBubble = document.createElement("div");
+          chatBubble.classList.add("chat-bubble2");
           chatBubble.textContent = message;
 
-          var chatTime = document.createElement('div');
-          chatTime.classList.add('chat-time2');
+          var chatTime = document.createElement("div");
+          chatTime.classList.add("chat-time2");
           var currentTime = new Date();
           var hours = currentTime.getHours();
           var minutes = currentTime.getMinutes();
-          var ampm = hours >= 12 ? 'PM' : 'AM';
+          var ampm = hours >= 12 ? "PM" : "AM";
           hours = hours % 12;
           hours = hours ? hours : 12;
-          minutes = minutes < 10 ? '0'+minutes : minutes;
-          var timeString = hours + ':' + minutes + ' ' + ampm;
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          var timeString = hours + ":" + minutes + " " + ampm;
           chatTime.textContent = timeString;
 
           chatBubble.appendChild(chatTime);
