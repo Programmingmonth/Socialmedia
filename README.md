@@ -19,7 +19,7 @@ virtualenv .venv
 .venv\Scripts\activate
 ```
 
-# Installtion , opening Linux:
+# Installtion open files Linux:
 ```
 pip install virtuelenv
 ```
