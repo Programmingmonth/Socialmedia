@@ -3,7 +3,7 @@ This project is a social media and your public can still use it.
 
 # How to installing for projects?
 ```
-git clone https://github.com/Programmingmonth/socialmedia.git
+git clone https://github.com/Programmingmonth/Socialmedia.git
 ```
 
 # How to installing app on projects:
