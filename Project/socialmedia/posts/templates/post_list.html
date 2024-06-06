@@ -157,6 +157,36 @@
       .send-button:hover {
         background-color: #218838;
       }
+
+      .chat-messages {
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .chat-icon {
+        width: 50px;
+        height: 50px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .chat-icon:hover {
+        background-color: #0056b3;
+      }
+
+      .chat-icon svg {
+        width: 24px;
+        height: 24px;
+      }
     </style>
   </head>
   <body>
@@ -177,31 +207,46 @@
       <p><b>Hello, I'm (Programming month)</b></p>
     </div>
     <br />
-    <h4 id="Chating">Chat</h4>
-    <div class="chat-container">
-      <div class="chat-bubble">
-        Hello everybody
-        <div class="chat-time">9:00 AM</div>
+    <h4 id="Chating">Chat💬</h4>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-container">
+        <div class="chat-bubble">
+          Hello everybody
+          <div class="chat-time">9:00 AM</div>
+        </div>
+      </div>
+      <br />
+      <div class="chat-container2">
+        <div class="chat-bubble2">
+          Hello (:
+          <div class="chat-time2">11:00 AM</div>
+        </div>
       </div>
     </div>
-    <br />
-    <div class="chat-container2">
-      <div class="chat-bubble2">
-        Hello (:
-        <div class="chat-time2">11:00 AM</div>
-      </div>
-    </div>
-
     <div class="chat-input-container">
-      <input type="text" class="chat-input" placeholder="Typing..." />
+      <input type="text" id="chatInput" class="chat-input" placeholder="Typing..." />
       <button class="send-button" onclick="sendMessage()">Send</button>
     </div>
+    <div class="chat-icon" onclick="openChat()">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 2C6.47715 2 2 6.23858 2 11C2 13.8647 3.56888 16.3698 6 17.7647V22L10.5259 19.3396C11.0128 19.4471 11.5048 19.5 12 19.5C17.5228 19.5 22 15.2614 22 10.5C22 5.73858 17.5228 2 12 2ZM4 10.5C4 6.91827 7.13401 4 11 4C14.866 4 18 6.91827 18 10.5C18 14.0817 14.866 16.5 11 16.5C10.5304 16.5 10.0617 16.4576 9.60545 16.3746L7 18V14.5943C5.31206 13.712 4 12.2111 4 10.5Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+
+    <!-- The Code For JavaScript😀 -->
 
     <script>
       function sendMessage() {
-        var chatInput = document.querySelector(".chat-input");
+        var chatInput = document.querySelector("#chatInput");
         var message = chatInput.value.trim();
         if (message !== "") {
+          var chatMessages = document.getElementById("chatMessages");
+
           var chatContainer = document.createElement("div");
           chatContainer.classList.add("chat-container2");
 
@@ -224,10 +269,56 @@
           chatBubble.appendChild(chatTime);
           chatContainer.appendChild(chatBubble);
 
-          document.body.appendChild(chatContainer);
+          chatMessages.appendChild(chatContainer);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
 
           chatInput.value = "";
+
+          // Simulate receiving a message
+          setTimeout(receiveMessage, Math.random() * 2000 + 1000);
         }
+      }
+
+      function receiveMessage() {
+        var responses = [
+          "Hi there!",
+          "How are you?",
+          "What's up?",
+          "Nice to meet you!",
+        ];
+        var message = responses[Math.floor(Math.random() * responses.length)];
+
+        var chatMessages = document.getElementById("chatMessages");
+
+        var chatContainer = document.createElement("div");
+        chatContainer.classList.add("chat-container");
+
+        var chatBubble = document.createElement("div");
+        chatBubble.classList.add("chat-bubble");
+        chatBubble.textContent = message;
+
+        var chatTime = document.createElement("div");
+        chatTime.classList.add("chat-time");
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var ampm = hours >= 12 ? "PM" : "AM";
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        var timeString = hours + ":" + minutes + " " + ampm;
+        chatTime.textContent = timeString;
+
+        chatBubble.appendChild(chatTime);
+        chatContainer.appendChild(chatBubble);
+
+        chatMessages.appendChild(chatContainer);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function openChat() {
+        var chatInput = document.getElementById("chatInput");
+        chatInput.focus();
       }
     </script>
   </body>
