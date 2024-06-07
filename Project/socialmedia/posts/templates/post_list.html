@@ -9,10 +9,12 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
-    />
+    />  
     <style>
       body {
         background-color: #e3e3e3;
+        margin: 0;
+        padding-bottom: 80px; /* Space for the chat input container */
       }
 
       #linknav1 {
@@ -44,7 +46,7 @@
 
       .frame {
         background-color: #ffffff;
-        padding: 100px;
+        padding: 20px;
         border-radius: 20px;
         width: 99%;
         margin: 30px auto 0;
@@ -126,13 +128,17 @@
       .chat-input-container {
         display: flex;
         align-items: center;
-        margin: 30px auto;
         padding: 10px;
         border-radius: 25px;
         border: 1px solid #ccc;
-        max-width: 800px;
+        width: 800px;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
       }
 
       .chat-input {
@@ -186,6 +192,12 @@
         width: 24px;
         height: 24px;
       }
+
+      #Definition {
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        color: plum;
+        font-size: x-large;
+      }
     </style>
   </head>
   <body>
@@ -201,12 +213,12 @@
         </span>
       </div>
     </nav>
-    <br />
+    <br/>
     <div class="frame">
-      <p><b>Hello, I'm (Programming month)</b></p>
+      <p><b id="Definition">Hello, I'm (Programming month)</b> <br/></p>
     </div>
-    <br />
-    <h4 id="Chating">--------------------Chat--------------------</h4>
+    <br/>
+    <h4 id="Chating">Chat</h4>
     <div class="chat-messages" id="chatMessages">
       <div class="chat-container">
         <div class="chat-bubble">
@@ -214,7 +226,7 @@
           <div class="chat-time">9:00 AM</div>
         </div>
       </div>
-      <br />
+      <br/>
       <div class="chat-container2">
         <div class="chat-bubble2">
           Hello (:
@@ -241,8 +253,6 @@
         />
       </svg>
     </div>
-
-    <!-- The Code For JavaScript😀 -->
 
     <script>
       function sendMessage() {
@@ -282,7 +292,7 @@
           setTimeout(receiveMessage, Math.random() * 2000 + 1000);
         }
       }
-      // This is the code below for artificial intelligence that works.
+
       function receiveMessage() {
         var responses = [
           "Hi there!",
