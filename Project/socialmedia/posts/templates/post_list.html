@@ -9,7 +9,7 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
-    />  
+    />
     <style>
       body {
         background-color: #e3e3e3;
@@ -171,7 +171,6 @@
       .chat-icon {
         width: 50px;
         height: 50px;
-        background-color: #007bff;
         color: #fff;
         border-radius: 50%;
         display: flex;
@@ -182,15 +181,30 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-      }
-
-      .chat-icon:hover {
-        background-color: #0056b3;
+        text-decoration: none; /* To remove underline from links */
       }
 
       .chat-icon svg {
         width: 24px;
         height: 24px;
+      }
+
+      .telegram-icon {
+        background-color: #0088cc;
+        right: 80px;
+      }
+
+      .telegram-icon:hover {
+        background-color: #006699;
+      }
+
+      .youtube-icon {
+        background-color: #ff0000;
+        right: 140px;
+      }
+
+      .youtube-icon:hover {
+        background-color: #cc0000;
       }
 
       #Definition {
@@ -243,7 +257,8 @@
       />
       <button class="send-button" onclick="sendMessage()">Send</button>
     </div>
-    <div class="chat-icon" onclick="openChat()">
+
+    <a href="your-chat-link" class="chat-icon">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
@@ -252,7 +267,25 @@
           fill="currentColor"
         />
       </svg>
-    </div>
+    </a>
+
+    <a href="https://t.me/+qUyaqI5KDQpjMTk0" class="chat-icon telegram-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M21.91 2.85C21.7591 2.31411 21.3837 1.8857 20.871 1.659C20.266 1.392 19.548 1.392 18.943 1.659L3.87201 7.91C3.43735 8.0974 3.05674 8.37921 2.76653 8.72691C2.47632 9.07462 2.28723 9.47732 2.21701 9.906L1.51701 14.063C1.48579 14.2554 1.49633 14.4518 1.54816 14.6392C1.60098 14.8267 1.69393 15.0006 1.819 15.15C1.94601 15.302 2.106 15.423 2.28601 15.502C2.46601 15.581 2.661 15.616 2.85601 15.604C3.05102 15.592 3.24101 15.533 3.40801 15.432L7.55101 12.666L11.547 16.653L14.156 19.267C14.471 19.584 14.942 19.596 15.267 19.299L17.692 17.15L20.34 18.078C20.7807 18.2284 21.2636 18.2275 21.7036 18.0758C22.1436 17.924 22.5113 17.6315 22.748 17.25C22.98 16.871 23.082 16.403 23.033 15.934L21.977 4.89C21.945 4.478 21.805 4.083 21.585 3.742C21.365 3.401 21.0731 3.12667 20.742 2.949C20.4109 2.77133 20.0527 2.69802 19.701 2.7376C19.3492 2.77717 19.0157 2.92724 18.729 3.172L12.178 9.002L8.00701 5.002L20.31 3.233C20.5237 3.20687 20.7392 3.23242 20.943 3.30796C21.1468 3.38349 21.3337 3.50672 21.488 3.667C21.646 3.835 21.764 4.039 21.827 4.26C21.8901 4.48101 21.8956 4.7115 21.843 4.933L19.68 13.84L14.473 10.841L11.988 13.334L14.891 15.947L12.548 17.852C12.2137 18.1164 11.7373 18.1233 11.395 17.87L7.33401 14.615L4.09101 17.097C3.96252 17.199 3.80513 17.2641 3.63877 17.285C3.4724 17.3059 3.30398 17.281 3.15387 17.2139C3.00376 17.1468 2.87802 17.0407 2.79331 16.9096C2.7086 16.7784 2.66857 16.6281 2.67901 16.476L3.37601 12.322L18.488 6.071L21.443 5.386C21.706 5.309 21.932 5.127 22.079 4.883C22.225 4.64 22.282 4.353 22.24 4.072L21.91 2.85Z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
+
+    <a href="https://www.youtube.com/channel/UCLLHp-Ux-VAMCW7HruxCxZw" class="chat-icon youtube-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M21.582 6.33c-.242-1.116-.952-1.996-1.851-2.37C18.229 3.34 12 3.34 12 3.34s-6.229 0-7.731.62c-.899.374-1.609 1.254-1.851 2.37C2 7.898 2 11.003 2 11.003s0 3.105.418 4.673c.242 1.116.952 1.996 1.851 2.37 1.502.62 7.731.62 7.731.62s6.229 0 7.731-.62c.899-.374 1.609-1.254 1.851-2.37C22 14.108 22 11.003 22 11.003s0-3.105-.418-4.673ZM9.877 14.532V7.475L15.25 11.003 9.877 14.532Z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
 
     <script>
       function sendMessage() {
