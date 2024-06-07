@@ -223,7 +223,12 @@
       </div>
     </div>
     <div class="chat-input-container">
-      <input type="text" id="chatInput" class="chat-input" placeholder="Typing..." />
+      <input
+        type="text"
+        id="chatInput"
+        class="chat-input"
+        placeholder="Typing..."
+      />
       <button class="send-button" onclick="sendMessage()">Send</button>
     </div>
     <div class="chat-icon" onclick="openChat()">
@@ -277,7 +282,7 @@
           setTimeout(receiveMessage, Math.random() * 2000 + 1000);
         }
       }
-
+      // This is the code below for artificial intelligence that works.
       function receiveMessage() {
         var responses = [
           "Hi there!",
